@@ -1,0 +1,8 @@
+{
+    "env": {
+        "HOST": "localhost",
+        "USER": "root",
+        "DATABASE_PASSWORD": "Ido239738416",
+        "DATABASE_NAME": "edea_db"
+    }
+}

@@ -1,0 +1,32 @@
+--------------------------------------------
+Create Tables (Customers + Orders):
+--------------------------------------------
+CREATE TABLE Customers(
+CustomerId INT NOT NULL AUTO_INCREMENT,
+Customer VARCHAR(100) NOT NULL,
+PRIMARY KEY (CustomerId));
+
+CREATE TABLE Orders(
+OrderId INT NOT NULL AUTO_INCREMENT, 
+CompanyName INT NOT NULL, 
+Address VARCHAR(100) NOT NULL,
+City VARCHAR(100) NOT NULL,
+Region VARCHAR(100) NOT NULL,
+ShippingCost DECIMAL(4, 2) DEFAULT (0.00),
+PRIMARY KEY(OrderId),
+FOREIGN KEY (CompanyName) REFERENCES Customers(CustomerId));
+
+--------------------------------------------
+Inserting Fields:
+--------------------------------------------
+INSERT INTO customers(Customer) VALUES ('BDO'), ('Deloitte'), ('accenture'), ('EDEA'), ('Nomersiko'), ('HBW'), ('Fiverr');
+
+INSERT INTO orders(CompanyName, Address, City, Region, ShippingCost) 
+VALUES 
+	(3, 'ben-yehoda 48', 'tel aviv', 'center', 34.90), 
+    (1, 'hakokiya 10', 'rishon-lezion', 'center', 44.90),
+    (7, 'gindi 25', 'jerusalem', 'jerusalem', 44.90),
+    (4, 'hamasger 21', 'eilat', 'south', 99.90), 
+    (2, 'canada 3', 'tel-aviv', center, 34.90),
+    (2, 'rothschild 74', 'haifa', 'north', 69.90),
+    (5, 'yadlin', 'ramat-gan', center, 34.90);
